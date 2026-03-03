@@ -1,4 +1,4 @@
-const myimgs = [
+const personal_images = [
 
     'assets/imgdaniil_kondrashin-cat-9839788_1920.jpg',
     'assets/img/jhenning-aster-9922917_1920.jpg',
