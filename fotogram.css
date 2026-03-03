@@ -9,7 +9,7 @@
 }
 
 /* header */
-header {
+#header_main {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -35,21 +35,40 @@ h1 {
     font-family: "Figtree";
     font-size: 56px;
     font-weight: 800;
+    padding-bottom: 80px;
 }
 
-.main_content {
+#main_content {
+    text-align: center;
     padding-block: 160px;
     background-color: #06171E;
+}
+
+#main_images {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+#main_images img {
+    border: #09212A;
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
 }
 
 /* main content end */
 
 /* footer */
-footer {
+#footer_main {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 140px;
     height: 128px;
-    background-color: #06171E;
+    background-color: #09212A;
 }
+
+.shape {}
+
+/* footer end */

@@ -11,29 +11,38 @@
         href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=PT+Sans&display=swap"
         rel="stylesheet">
     <script src="fotogram.js" defer> </script>
+    <link rel="icon" type="icon" href="assets/icons/favicon.png">
     <title>Fotogram</title>
 </head>
 
 <body>
 
-    <header>
+    <header id="header_main">
         <div class="max_width">
             <img class="header_img" src="assets/icons/logo.png" alt="Fotogram logo">
         </div>
     </header>
     <main>
-        <div class="max:width main_content">
-        <h1 class="main_caption">Your personal photo album </h1>
-        <div >
-            
-        </div>
-        </div>
-        <dialog>
+        <div id="main_content">
+            <h1 class="main_caption max_width">Your personal photo album </h1>
+            <div onclick="open_dialog()" id="main_images" class="max_width">
 
+            </div>
+        </div>
+        <dialog id="dialog_main">
+            <header class="dialog_header">
+            </header>
+            <section class="dialog_img"></section>
+            <footer class="dialog_footer">
+                <img src="assets/icons/arrowleft.png" alt="arrrow left">
+                <img src="assets/icons/arrowright.png" alt="arrow right">
+            </footer>
         </dialog>
     </main>
-    <footer>
-        <img src="assets/icons/footerlogo.png" alt="Developer Akademie logo">
+    <footer id="footer_main">
+        <div class="max_width shape">
+            <img src="assets/icons/footerlogo.png" alt="Developer Akademie logo">
+        </div>
     </footer>
 </body>
 
