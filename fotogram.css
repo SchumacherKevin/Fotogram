@@ -13,13 +13,13 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    padding-left: 140px;
+    padding-inline: 140px;
     height: 128px;
     width: 100%;
     background-color: #09212A;
 }
 
-.header_img {
+#header_logo {
     height: 40px;
     width: 215px;
 }
@@ -38,24 +38,93 @@ h1 {
     padding-bottom: 80px;
 }
 
+h2 {
+    color: white;
+    font-family: "Figtree";
+    font-size: 24px;
+    font-weight: 700;
+}
+
 #main_content {
     text-align: center;
+    padding-inline: 140px;
     padding-block: 160px;
     background-color: #06171E;
 }
 
 #main_images {
     display: flex;
-    justify-content: center;
-    gap: 16px;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
 }
 
 #main_images img {
     border: #09212A;
     border-radius: 10px;
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
 }
+
+/* dialog start */
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+#dialog_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 64px;
+}
+
+#close_btn {
+    background: transparent;
+    border: none;
+}
+
+#dialog_main {
+    background-color: #09212A;
+    border-radius: 20px;
+}
+
+#image_container {
+    width: 100%;
+    height: 100%;
+    padding-inline: 64px;
+}
+
+#image_container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#dialog_footer {
+    display: flex;
+    justify-content: center;
+    padding-block: 64px;
+    gap: 40px;
+}
+
+#counter {
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav_btn {
+    background: transparent;
+    border: none;
+    height: 65px;
+    width: 65px;
+}
+
+/* dialog end */
 
 /* main content end */
 
@@ -64,7 +133,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 140px;
+    padding-inline: 140px;
     height: 128px;
     background-color: #09212A;
 }
@@ -72,3 +141,31 @@ h1 {
 .shape {}
 
 /* footer end */
+
+/* responsive */
+@media (max-width: 830px) {
+
+    #header_main {
+        padding-inline: 70px;
+    }
+
+    h1 {
+        padding-bottom: 40px;
+    }
+
+    #main_content {
+        padding-inline: 70px;
+        padding-block: 80px;
+    }
+
+    #footer_main {
+        padding-inline: 70px;
+    }
+}
+
+@media (max-width: 400px) {
+    #main_images img {
+        height: 180px;
+        width: 180px;
+    }
+}

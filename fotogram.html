@@ -18,8 +18,8 @@
 <body>
 
     <header id="header_main">
-        <div class="max_width">
-            <img class="header_img" src="assets/icons/logo.png" alt="Fotogram logo">
+        <div id="header_logo" class="max_width">
+
         </div>
     </header>
     <main>
@@ -29,21 +29,16 @@
 
             </div>
         </div>
-        <dialog id="dialog_main">
-            <header class="dialog_header">
-            </header>
-            <section class="dialog_img"></section>
-            <footer class="dialog_footer">
-                <img src="assets/icons/arrowleft.png" alt="arrrow left">
-                <img src="assets/icons/arrowright.png" alt="arrow right">
-            </footer>
+        <dialog id="dialog_main" onclick="if(event.target===this) this.close()">
+
         </dialog>
     </main>
     <footer id="footer_main">
-        <div class="max_width shape">
-            <img src="assets/icons/footerlogo.png" alt="Developer Akademie logo">
+        <div id="footer_logo" class="max_width shape">
+
         </div>
     </footer>
+
 </body>
 
 </html>
