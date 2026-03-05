@@ -36,32 +36,32 @@ const icons = [
 
 const dialog_ref = document.getElementById("dialog_main");
 
-function open_dialog() {
+function openDialog() {
   buildDialog();
   dialog_ref.showModal();
 }
 
-function close_dialog() {
+function closeDialog() {
   dialog_ref.close();
 }
 
-function render_header(i) {
+function renderHeader(i) {
   document.getElementById("header_logo").innerHTML =
     `<img src="${icons[i]}" alt="Fotogram logo" ">`;
 }
 
-function render_footer(i) {
+function renderFooter(i) {
   document.getElementById("footer_logo").innerHTML =
     `<img src="${icons[i]}" alt="Developer Akademie logo" ">`;
 }
 
-function render_images() {
+function renderImages() {
   let img_ref = document.getElementById("main_images");
 
   let main = "";
 
   for (let i = 0; i < personal_images.length; i++) {
-    main += `<img src="${personal_images[i]}" alt="Bild ${i + 1}"">`;
+    main += `<img onclick="openDialog()" src="${personal_images[i]}" alt="Bild ${i + 1}"">`;
   }
   img_ref.innerHTML = main;
 }
@@ -74,7 +74,7 @@ function buildDialog() {
   dialog.innerHTML = `
         <div id="dialog_header">
           <h2 id="image_title">${images_title[current]}</h2>
-          <button id="close_btn" onclick="close_dialog()">
+          <button id="close_btn" onclick="closeDialog()">
           <img src="${icons[1]}" alt="close buttton">
           </button>
         </div>
@@ -104,8 +104,8 @@ function prevImage() {
   buildDialog();
 }
 
-render_header(0);
+renderHeader(0);
 
-render_images();
+renderImages();
 
-render_footer(4);
+renderFooter(4);
