@@ -36,8 +36,8 @@ const icons = [
 
 const dialog_ref = document.getElementById("dialog_main");
 
-function openDialog() {
-  buildDialog();
+function openDialog(i) {
+  buildDialog(i);
   dialog_ref.showModal();
 }
 
@@ -61,47 +61,46 @@ function renderImages() {
   let main = "";
 
   for (let i = 0; i < personal_images.length; i++) {
-    main += `<img onclick="openDialog()" src="${personal_images[i]}" alt="Bild ${i + 1}"">`;
+    main += `<img onclick="openDialog(${i})" src="${personal_images[i]}" alt="Bild ${i + 1}"">`;
   }
   img_ref.innerHTML = main;
 }
 
-let current = 0;
 
-function buildDialog() {
+function buildDialog(i) {
   let dialog = document.getElementById("dialog_main");
 
   dialog.innerHTML = `
         <div id="dialog_header">
-          <h2 id="image_title">${images_title[current]}</h2>
+          <h2 id="image_title">${images_title[i]}</h2>
           <button id="close_btn" onclick="closeDialog()">
           <img src="${icons[1]}" alt="close buttton">
           </button>
         </div>
 
         <div id="image_container">
-          <img src="${personal_images[current]}" alt="${personal_images[current]}">
+          <img src="${personal_images[i]}" alt="${personal_images[i]}">
         </div>
 
         <div id="dialog_footer">
-          <button class="nav_btn" onclick="prevImage()">
+          <button class="nav_btn" onclick="prevImage(${i})">
             <img src="${icons[2]}" alt="arrow left">
           </button>
-          <span id="counter">${current + 1}/${personal_images.length}</span>
-          <button class="nav_btn" onclick="nextImage()">
+          <span id="counter">${i + 1}/${personal_images.length}</span>
+          <button class="nav_btn" onclick="nextImage(${i})">
             <img src="${icons[3]}" alt="arrow right">
           </button>
         </div>
       `;
 }
-function nextImage() {
-  current = (current + 1) % personal_images.length;
-  buildDialog();
+function nextImage(i) {
+  i = (i + 1) % personal_images.length;
+  buildDialog(i);
 }
 
-function prevImage() {
-  current = (current - 1 + personal_images.length) % personal_images.length;
-  buildDialog();
+function prevImage(i) {
+  i = (i - 1 + personal_images.length) % personal_images.length;
+  buildDialog(i);
 }
 
 renderHeader(0);

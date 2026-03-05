@@ -25,6 +25,7 @@
     width: 215px;
 }
 
+
 /* header end */
 
 /* main content */
@@ -46,10 +47,16 @@ h2 {
     font-weight: 700;
 }
 
+main {
+    background-color: #06171E;
+    min-height: 100dvh;
+}
+
 #main_content {
     display: flex;
     flex-direction: column;
     text-align: center;
+    height: fit-content;
     padding-inline: 140px;
     padding-block: 160px;
     background-color: #06171E;
@@ -68,6 +75,11 @@ h2 {
     border-radius: 10px;
     height: 250px;
     width: 250px;
+}
+
+#main_images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
 /* dialog start */
