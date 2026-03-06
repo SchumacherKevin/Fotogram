@@ -15,7 +15,7 @@
     <title>Fotogram</title>
 </head>
 
-<body>
+<body onload="init()">
 
     <header id="header_main">
         <div id="header_logo" class="max_width">
@@ -25,11 +25,13 @@
     <main>
         <div id="main_content">
             <h1 class="main_caption max_width">Your personal photo album </h1>
-            <div  id="main_images" class="max_width">
+            <div id="main_images" class="max_width">
 
             </div>
         </div>
-        <dialog id="dialog_main" onclick="if(event.target===this) this.close()">
+        <dialog id="dialog_main" onclick="closeDialog()">
+            <!-- onclick="if(event.target===this) this.close()" -->
+
 
         </dialog>
     </main>

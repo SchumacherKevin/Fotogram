@@ -45,44 +45,48 @@ function closeDialog() {
   dialog_ref.close();
 }
 
-function renderHeader(i) {
-  document.getElementById("header_logo").innerHTML =
-    `<img src="${icons[i]}" alt="Fotogram logo" ">`;
+function stopPropagation(event) {
+  event.stopPropagation(event);
 }
 
-function renderFooter(i) {
+function renderHeader() {
+  document.getElementById("header_logo").innerHTML =
+    `<img src="${icons[0]}" alt="Fotogram logo" ">`;
+}
+
+function renderFooter() {
   document.getElementById("footer_logo").innerHTML =
-    `<img src="${icons[i]}" alt="Developer Akademie logo" ">`;
+    `<img src="${icons[4]}" alt="Developer Akademie logo" ">`;
 }
 
 function renderImages() {
   let img_ref = document.getElementById("main_images");
 
-  let main = "";
-
   for (let i = 0; i < personal_images.length; i++) {
-    main += `<img onclick="openDialog(${i})" src="${personal_images[i]}" alt="Bild ${i + 1}"">`;
+    img_ref.innerHTML += `<img onclick="openDialog(${i})" src="${personal_images[i]}" alt="Bild ${i + 1}"">`;
   }
-  img_ref.innerHTML = main;
 }
-
 
 function buildDialog(i) {
   let dialog = document.getElementById("dialog_main");
 
-  dialog.innerHTML = `
-        <div id="dialog_header">
+  dialog.innerHTML = DialogContent(i);
+}
+
+function DialogContent(i) {
+  return `
+        <div id="dialog_header" onclick="stopPropagation(event)">
           <h2 id="image_title">${images_title[i]}</h2>
           <button id="close_btn" onclick="closeDialog()">
           <img src="${icons[1]}" alt="close buttton">
           </button>
         </div>
 
-        <div id="image_container">
+        <div id="image_container" onclick="stopPropagation(event)">
           <img src="${personal_images[i]}" alt="${personal_images[i]}">
         </div>
 
-        <div id="dialog_footer">
+        <div id="dialog_footer" onclick="stopPropagation(event)">
           <button class="nav_btn" onclick="prevImage(${i})">
             <img src="${icons[2]}" alt="arrow left">
           </button>
@@ -93,6 +97,7 @@ function buildDialog(i) {
         </div>
       `;
 }
+
 function nextImage(i) {
   i = (i + 1) % personal_images.length;
   buildDialog(i);
@@ -103,8 +108,8 @@ function prevImage(i) {
   buildDialog(i);
 }
 
-renderHeader(0);
-
-renderImages();
-
-renderFooter(4);
+function init() {
+  renderHeader();
+  renderImages();
+  renderFooter();
+}

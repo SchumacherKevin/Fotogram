@@ -9,6 +9,11 @@
     margin: auto;
 }
 
+html,
+body {
+    min-height: 100%;
+}
+
 /* header */
 #header_main {
     display: flex;
@@ -47,16 +52,11 @@ h2 {
     font-weight: 700;
 }
 
-main {
-    background-color: #06171E;
-    min-height: 100dvh;
-}
 
 #main_content {
     display: flex;
     flex-direction: column;
     text-align: center;
-    height: fit-content;
     padding-inline: 140px;
     padding-block: 160px;
     background-color: #06171E;
@@ -73,8 +73,8 @@ main {
 #main_images img {
     border: #09212A;
     border-radius: 10px;
-    height: 250px;
-    width: 250px;
+    height: 320px;
+    width: 320px;
 }
 
 #main_images img:hover {
@@ -103,6 +103,10 @@ dialog {
     border: none;
 }
 
+#close_btn:hover {
+    cursor: pointer;
+}
+
 #dialog_main {
     background-color: #09212A;
     border-radius: 20px;
@@ -111,7 +115,7 @@ dialog {
 #image_container {
     width: 100%;
     height: 420px;
-    padding-inline: 64px;
+    padding-inline: 48px;
 }
 
 #image_container img {
@@ -140,6 +144,10 @@ dialog {
     border: none;
     height: 65px;
     width: 65px;
+}
+
+.nav_btn:hover {
+    cursor: pointer;
 }
 
 /* dialog end */
@@ -204,12 +212,38 @@ dialog {
 }
 
 @media (max-width: 400px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    dialog {
+        width: 100%;
+    }
+
     #main_images img {
         height: 180px;
         width: 180px;
     }
 
+    #image_container {
+        height: 300px;
+        padding-inline: 24px;
+    }
+
     #dialog_header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 64px;
+        padding: 24px;
         gap: 10px;
+    }
+
+    #dialog_footer {
+        padding: 0;
     }
 }
