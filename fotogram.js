@@ -34,6 +34,11 @@ const icons = [
   "assets/icons/footerlogo.png",
 ];
 
+function init() {
+  renderHeader();
+  renderImages();
+  renderFooter();
+}
 const dialog_ref = document.getElementById("dialog_main");
 
 function openDialog(i) {
@@ -70,10 +75,10 @@ function renderImages() {
 function buildDialog(i) {
   let dialog = document.getElementById("dialog_main");
 
-  dialog.innerHTML = DialogContent(i);
+  dialog.innerHTML = dialogContent(i);
 }
 
-function DialogContent(i) {
+function dialogContent(i) {
   return `
         <div id="dialog_header" onclick="stopPropagation(event)">
           <h2 id="image_title">${images_title[i]}</h2>
@@ -106,10 +111,4 @@ function nextImage(i) {
 function prevImage(i) {
   i = (i - 1 + personal_images.length) % personal_images.length;
   buildDialog(i);
-}
-
-function init() {
-  renderHeader();
-  renderImages();
-  renderFooter();
 }

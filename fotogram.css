@@ -75,6 +75,7 @@ h2 {
     border-radius: 10px;
     height: 320px;
     width: 320px;
+    object-fit: cover;
 }
 
 #main_images img:hover {
